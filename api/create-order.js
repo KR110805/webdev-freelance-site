@@ -33,6 +33,12 @@ export default async function handler(req, res) {
 
     const amount = PLAN_PRICES[plan];
 
+    // Validate environment variables early
+    if (!process.env.RAZORPAY_KEY_ID || !process.env.RAZORPAY_KEY_SECRET) {
+        console.error('Missing Razorpay credentials. Ensure RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET are set in Vercel Environment Variables.');
+        return res.status(500).json({ error: 'Payment service is not configured' });
+    }
+
     try {
         const razorpay = new Razorpay({
             key_id: process.env.RAZORPAY_KEY_ID,
@@ -54,7 +60,7 @@ export default async function handler(req, res) {
             currency: order.currency,
         });
     } catch (err) {
-        console.error('Razorpay order creation failed:', err);
+        console.error('Razorpay order creation failed:', err.message || err);
         return res.status(500).json({ error: 'Failed to create order' });
     }
 }

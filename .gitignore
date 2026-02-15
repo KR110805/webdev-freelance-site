@@ -1,2 +1,13 @@
 src/.DS_Store
 .DS_Store
+
+# Environment variables (contains secrets)
+.env
+.env.local
+.env.*.local
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/

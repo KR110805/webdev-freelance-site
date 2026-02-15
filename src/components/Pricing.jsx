@@ -84,10 +84,10 @@ const Toast = ({ message, type, onClose }) => (
         exit="exit"
         transition={{ duration: 0.3 }}
         className={`fixed bottom-24 right-6 z-50 max-w-sm px-5 py-4 rounded-xl shadow-2xl border backdrop-blur-sm ${type === 'success'
-                ? 'bg-green-900/90 border-green-700/50 text-green-100'
-                : type === 'error'
-                    ? 'bg-red-900/90 border-red-700/50 text-red-100'
-                    : 'bg-zinc-900/90 border-zinc-700/50 text-zinc-100'
+            ? 'bg-green-900/90 border-green-700/50 text-green-100'
+            : type === 'error'
+                ? 'bg-red-900/90 border-red-700/50 text-red-100'
+                : 'bg-zinc-900/90 border-zinc-700/50 text-zinc-100'
             }`}
     >
         <div className="flex items-start gap-3">
@@ -159,7 +159,7 @@ const Pricing = () => {
 
             // Step 2: Open Razorpay checkout
             const options = {
-                key: 'rzp_test_SG72AfidpngyGY',
+                key: import.meta.env.VITE_RAZORPAY_KEY_ID,
                 amount,
                 currency,
                 name: 'KR1119',
@@ -276,8 +276,8 @@ const Pricing = () => {
                                     whileHover={{ scale: 1.03 }}
                                     transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                                     className={`relative p-8 rounded-2xl border transition-all duration-300 flex flex-col ${tier.highlighted
-                                            ? 'bg-zinc-900 border-indigo-500 shadow-[0_0_30px_-5px_rgba(99,102,241,0.25)]'
-                                            : 'bg-zinc-900 border-zinc-800 hover:border-zinc-700'
+                                        ? 'bg-zinc-900 border-indigo-500 shadow-[0_0_30px_-5px_rgba(99,102,241,0.25)]'
+                                        : 'bg-zinc-900 border-zinc-800 hover:border-zinc-700'
                                         }`}
                                 >
                                     {/* "Most Popular" badge */}
@@ -328,8 +328,8 @@ const Pricing = () => {
                                         onClick={() => handlePayment(tier.name)}
                                         disabled={!!loadingPlan}
                                         className={`mt-8 w-full py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 ${tier.highlighted
-                                                ? 'bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/40'
-                                                : 'border border-zinc-700 hover:border-zinc-500 text-zinc-300 hover:text-white'
+                                            ? 'bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/40'
+                                            : 'border border-zinc-700 hover:border-zinc-500 text-zinc-300 hover:text-white'
                                             } ${loadingPlan ? 'opacity-60 cursor-not-allowed' : 'cursor-pointer'}`}
                                     >
                                         {isLoading ? (
