@@ -1,4 +1,7 @@
 import { motion } from 'framer-motion';
+import collegeEventImg from '../assets/college-event.png';
+import portfolioImg from '../assets/portfolio.png';
+import corporateImg from '../assets/corporate.png';
 
 const PROJECTS = [
     {
@@ -6,7 +9,7 @@ const PROJECTS = [
         description:
             'Modern cultural fest website with event highlights and responsive design.',
         tags: ['HTML', 'CSS', 'JavaScript'],
-        image: 'src/assets/college-event.png',
+        image: collegeEventImg,
         liveUrl: 'https://dhruva-2026-b548e.web.app',
         githubUrl: 'https://github.com/KR110805',
     },
@@ -15,7 +18,7 @@ const PROJECTS = [
         description:
             'Personal branding website with smooth animations and dark theme UI.',
         tags: ['React', 'Tailwind', 'Framer Motion'],
-        image: 'src/assets/portfolio.png',
+        image: portfolioImg,
         liveUrl: 'https://portfolio-b4mk.vercel.app/',
         githubUrl: 'https://github.com/KR110805',
     },
@@ -24,7 +27,7 @@ const PROJECTS = [
         description:
             'Professional business website focused on credibility and clean layout.',
         tags: ['HTML', 'CSS', 'JavaScript'],
-        image: 'src/assets/corporate.png',
+        image: corporateImg,
         liveUrl: 'https://www.amw-resources.com/',
         githubUrl: 'https://github.com/KR110805',
     },
